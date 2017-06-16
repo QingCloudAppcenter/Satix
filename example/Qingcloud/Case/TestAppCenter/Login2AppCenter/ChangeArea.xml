@@ -1,0 +1,22 @@
+<testCase>
+	<title>ChangeArea</title>
+	<description>Test ChangeArea Function</description>
+	<stopIfFailed>true</stopIfFailed>
+	<repeat>1</repeat> 
+	
+	<action>
+		<name>click</name>
+		<element>zone-switcher-4</element>
+		<elementBy>className</elementBy>
+	</action>
+	
+	<action>
+		<name>click</name>
+		<element>zone-label-5</element>
+		<elementBy>className</elementBy>
+	</action>
+	
+	 
+	
+	
+</testCase>

@@ -1,0 +1,34 @@
+<testCase>
+	<title>Assert Title</title>
+	<description>Assert Title</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>assertTitle</name>
+		<value>satix home html</value>
+	</action>
+	<action>
+		<name>assertTitle</name>
+		<value>regexp:satix[ hometl]*</value>
+	</action>
+	<action>
+		<name>assertTitle</name>
+		<value>glob:satix*ht?l</value>
+	</action>
+	<action>
+		<name>assertTitle</name>
+		<value>exact:satix home html</value>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

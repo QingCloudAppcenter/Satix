@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="satix" basedir="." default="package">
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="classes.dir" value="${basedir}/classes" />
+	<property name="lib.dir" value="${basedir}/lib" />
+	<property name="jar.file" value="${basedir}/satix.jar" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="bin.dir" value="${basedir}/bin" />
+	<property name="ut.dir" value="${basedir}/UT" />
+	<property name="deliverable.dir" value="${basedir}/deliverable" />
+
+	<path id="compile.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${classes.dir}" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${classes.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<!--compile and copy the class files to deploy directory-->
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="on">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${jar.file}">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${src.dir}">
+				<include name="**/*.properties" />
+			</fileset>
+		</jar>
+	</target>
+	<target name="version" depends="jar" >
+		<taskdef name="buildVersion" classname="org.satix.version.BuildVersion" classpath="${classes.dir}"/>
+		<buildVersion/>
+	</target>
+	<target name="package" depends="version">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+		<copy file="${jar.file}" tofile="${build.dir}/satix.jar"/>
+		<delete dir="${deliverable.dir}" />
+		<mkdir dir="${deliverable.dir}" />		
+		<mkdir dir="${deliverable.dir}/lib" />
+		<mkdir dir="${deliverable.dir}/config" />
+		<copy file="${bin.dir}/satix.sh" tofile="${deliverable.dir}/satix.sh"/>
+		<copy file="${bin.dir}/satix.bat" tofile="${deliverable.dir}/satix.bat"/>
+		<copy file="${basedir}/config/satix.properties" tofile="${deliverable.dir}/config/satix.properties"/>
+		<copy file="${basedir}/config/global.properties" tofile="${deliverable.dir}/config/global.properties"/>			
+		<move file="${basedir}/VERSION.txt" tofile="${deliverable.dir}/VERSION.txt"/>		
+		<copy todir="${deliverable.dir}/lib">
+			<fileset file="${lib.dir}/JSON4J.jar"/>
+			<fileset file="${lib.dir}/mail.jar"/>
+			<fileset file="${lib.dir}/selenium-server-standalone-2.41.0.jar"/>
+		</copy>
+		<copy file="${jar.file}" tofile="${deliverable.dir}/lib/satix.jar"/>
+		<delete file="${jar.file}" />
+	</target>
+</project>

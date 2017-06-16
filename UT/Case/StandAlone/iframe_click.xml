@@ -1,0 +1,32 @@
+<testCase>
+	<title>Iframe Click</title>
+	<description>Click an element in iframe</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url2}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>frameId</value>
+	</action>
+	<action>
+		<name>click</name>
+		<element>button1</element>
+		<elementBy>id</elementBy>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<relative>top</relative>
+	</action>
+	<action>
+		<name>click</name>
+		<element>button2</element>
+		<elementBy>id</elementBy>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

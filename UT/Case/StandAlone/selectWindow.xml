@@ -1,0 +1,55 @@
+<testCase>
+	<title>Select Window</title>
+	<description>Select Window</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>click</name>
+		<element>open a new window</element>
+		<elementBy>partialLinkText</elementBy>
+	</action>
+	<action>
+		<name>waitPageToLoad</name>
+		<elapse>1000</elapse>
+	</action>
+	<action>
+		<name>selectWindow</name>
+		<value>satix new window</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>newInputText</element>
+		<elementBy>id</elementBy>
+		<value>new window input</value>
+	</action>
+	<action>
+		<name>waitPageToLoad</name>
+		<elapse>1000</elapse>
+	</action>
+	<action>
+		<name>selectWindow</name>
+		<value>satix home html</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>myInputText</element>
+		<elementBy>id</elementBy>
+		<value>my window input</value>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

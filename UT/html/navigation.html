@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>satix navigation html</title>
+		<script>
+			function showTree()
+			{
+				var tree = document.getElementById("hidden-branch");
+				if(tree.style.display == "none")
+					tree.style.display = "block";
+				else if(tree.style.display == "block")
+					tree.style.display = "none";
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<a id="myTree" href="#" onclick="showTree()">tree</a>
+			<div id="hidden-branch" style="width:300px; font-size:14px; display:none">
+				&nbsp;&nbsp;<a href="main.html" target="detail">branch 1</a>
+			</div>
+		</div>
+	
+	</body>
+</html>

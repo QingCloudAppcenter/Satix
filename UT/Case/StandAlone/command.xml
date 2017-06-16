@@ -1,0 +1,16 @@
+<testCase>
+	<title>Command</title>
+	<description>Call an external command</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>command</name>
+		<commandPath></commandPath>
+		<command>java</command>
+		<parameter>-version</parameter>
+		<condition>contain</condition>
+		<resultString>java version</resultString>
+		<stopIfException>true</stopIfException>
+	</action>
+</testCase>

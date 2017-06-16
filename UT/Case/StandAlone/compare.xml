@@ -1,0 +1,161 @@
+<testCase>
+	<title>Compare Element</title>
+	<description>Compare Element</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>style.width</attribute>
+		<type>int</type>
+		<variable>width</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>style.border</attribute>
+		<type>string</type>
+		<variable>border</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>style.border[1]</attribute>
+		<type>int</type>
+		<variable>border.width</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>style.border[2]</attribute>
+		<type>string</type>
+		<variable>border.color</variable>
+	</action>
+
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number1</attribute>
+		<type>int</type>
+		<variable>number1</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number2</attribute>
+		<type>int</type>
+		<variable>number2</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number3</attribute>
+		<type>float</type>
+		<variable>number3</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number4</attribute>
+		<type>float</type>
+		<variable>number4</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number5</attribute>
+		<type>string</type>
+		<variable>number5s</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number5</attribute>
+		<type>float</type>
+		<variable>number5f</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number5</attribute>
+		<type>int</type>
+		<variable>number5i</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number6</attribute>
+		<type>float</type>
+		<variable>number6f</variable>
+	</action>
+	<action>
+		<name>storeElement</name>
+		<element>testStoreElementActionId</element>
+		<elementBy>id</elementBy>
+		<attribute>number6</attribute>
+		<type>int</type>
+		<variable>number6i</variable>
+	</action>
+
+	<action>
+		<name>compare</name>
+		<expression>${width} > 100</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${width} == 200</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${border.width} > 0</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${border.width} == 1</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>"${number5s}" == "18,599,333 ms"</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${number5f} == 18599333.00</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${number5i} == "18599333"</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${number6f} == 18599333.3</expression>
+	</action>
+	<action>
+		<name>compare</name>
+		<expression>${number6i} == 18599333</expression>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

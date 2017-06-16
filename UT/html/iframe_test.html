@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>test iframe with owa web part</title>
+</head>
+
+<body>
+
+<iframe src="http://www.baidu.com" name="OwaPartsSample" align=center height="500" width="900" scrolling="Auto">
+</iframe>
+
+<br><br>
+
+<div align=center>
+  <b>Test Links</b>
+  <br>
+  <br>
+
+  <!-- reference Inbox -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&fpath=inbox" target="OwaPartsSample">Inbox</A><BR>
+
+  <!-- reference Inbox/abc -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&fpath=inbox%2fabc" target="OwaPartsSample"> Inbox abc folder</A><BR>
+
+  <!-- reference calendar -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&fpath=calendar" target="OwaPartsSample"> Calendar</A><BR>
+
+
+  <!-- reference Public Folders/test -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&module=PublicFolders&fpath=test" target="OwaPartsSample"> Public Folder test folder</A><BR>
+
+  <!-- reference Public Folders/test team calendar -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&module=PublicFolders&fpath=test%20team%20calendar" target="OwaPartsSample">Public Folder - Test Team Calendar</A><BR>
+
+  <!-- reference Public Folders/test team calendar -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&module=PublicFolders&fpath=test%20team%20calendar&view=Weekly" target="OwaPartsSample"> Public Folder - Test Team Calendar - Weekly</A><BR>
+
+  <!-- reference Public Folders/test team calendar -->
+  <a href="https://127.0.0.1/owa/?cmd=contents&module=PublicFolders&fpath=test%20team%20calendar&view=monthly" target="OwaPartsSample">Public Folder - Test Team Calendar - Monthly</A><BR>
+
+
+</div>
+</body>
+
+</html>

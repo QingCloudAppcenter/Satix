@@ -1,0 +1,22 @@
+<testCase>
+	<title>Assert Body Text</title>
+	<description>Assert Body Text</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myHeader</value>
+	</action>
+	<action>
+		<name>assertBodyText</name>
+		<value>Welcome to use satix</value>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

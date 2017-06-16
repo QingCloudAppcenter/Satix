@@ -1,0 +1,9 @@
+-c  example/Qingcloud/Qingcloud.properties -t  example/Qingcloud/Case/TestAppCenter
+
+
+ 如何将Eclipse中项目编码设置为utf-8
+ 如果要使插件开发应用能有更好的国际化支持，能够最大程度的支持中文输出，则最好使 Java文件使用UTF-8编码。然而，Eclipse工作空间(workspace)的缺省字符编码是操作系统缺省的编码，简体中文操作系统 (Windows XP、Windows 2000简体中文)的缺省编码是GB18030，在此工作空间中建立的工程编码是GB18030，工程中建立的java文件也是GB18030。如果要使新建立工程、java文件直接使UTF-8则需要做以下工作： 
+1、windows->Preferences...打开"首选项"对话框，左侧导航树，导航到general->Workspace，右侧Text file encoding，选择Other，改变为UTF-8，以后新建立工程其属性对话框中的Text file encoding即为UTF-8。 
+2、windows->Preferences...打开"首选项"对话框，左侧导航树，导航到general->Content Types，右侧Context Types树，点开Text，选择Java Source File，在下面的Default encoding输入框中输入UTF-8，点Update，则设置Java文件编码为UTF-8。其他java应用开发相关的文件如：properties、XML等已经由Eclipse缺省指定，分别为ISO8859-1，UTF-8，如开发中确需改变编码格式则可以在此指定。 
+3、经过上述两步，新建java文件即为UTF-8编码，Eclipse编译、运行、调试都没问题，但是做RCP应用的Product输出时、或者插件输出时，则总是出错，要么不能编译通过(输出时要重新compile)、要么输出的插件运行时中文显示乱码。此时需要再RCP应用、或插件Plugin工程的build.properties中增加一行，javacDefaultEncoding.. = UTF-8。让输出时编译知道java源文件时UTF-8编码。这个设置需要保证所有的java源文件时UTF-8编码格式，如果不全是，可以参考 Eclipse帮中(Plug-in Development Environment Guide > Reference > Feature and Plug-in Build configuration)，建议全部java源文件是UTF-8编码。 
+ 

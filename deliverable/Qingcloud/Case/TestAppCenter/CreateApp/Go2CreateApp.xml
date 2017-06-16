@@ -1,0 +1,14 @@
+<testCase>
+	<title>Go to Create APP Page</title>
+	<description>Go to Create APP Page</description>
+	<stopIfFailed>true</stopIfFailed>
+	<repeat>1</repeat> 
+	
+	<!-- 跳转appcenter -->
+	<action>
+		<name>openWebPage</name>
+		<value>${AppCenterURL}</value>
+	</action>
+	
+	
+</testCase>

@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>satix main html</title>
+		<style type="text/css">
+			.btn
+			{
+				width: 80px;
+				height:	28px;
+			}
+		</style>
+		<script	type="text/javascript">
+			//SimpleContextMenu.setup({'preventDefault':true,	'preventForms':false});
+			//SimpleContextMenu.attach('container', 'CM1');
+
+			function clickBtn()
+			{
+				alert("I am	clicked!");
+			}
+
+			function show()
+			{
+				var	content	= document.getElementById("hidden-content");
+				if(content.style.display ==	"none")
+					content.style.display =	"block";
+				else if(content.style.display == "block")
+					content.style.display =	"none";
+			}
+			function openWin()
+			{
+				window.open('newWindow.html','newWindow','width=500,height=300,top=250,left=550');
+			}
+			
+			function testCssSelector(){
+				var element = document.querySelector("#testScrollbar");
+				alert(element.id);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<input id="myBtn" class="btn" type="button"	value="click me" onclick="clickBtn();"></input>
+		</div>
+		<p></p>
+		<div>
+			<input id="myInputText"	name="inputText" type="text"></input>
+		</div>
+		<p></p>
+		<div>
+			<textarea id="myInputTextArea"	name="inputTextArea" type="text" rows="3" cols="35"> </textarea>
+		</div>
+		<p></p>
+		<div>
+			<select id="mySelect">
+				<option	value="option1_value">option1</option>
+				<option	value="option2_value">option2</option>
+				<option	value="option3_value">option3</option>
+				<option	value="option4_value">option4</option>
+			</select>
+		</div>
+		<p></p>
+		<div>
+			<a href="#" onclick="show()">click me to show content</a>
+			<div id="hidden-content" style="width:300px; font-size:14px; display:none">
+				<input id="myCheckbox" type="checkbox" value="checkbox"></input> I am a	checkbox
+			</div>
+		</div>
+		<p></p>
+		<div>
+			<a href="#" onclick="openWin()">click me to	open a new window</a>
+		</div>
+		<p></p>
+
+		<div style="width: 200px; height: 50px; border: 1px solid black;" id="testStoreElementActionId" name="testStoreElementActionName"  number1="12345" number2="-12345" number3="123.45" number4="-123.45" number5="18,599,333 ms" number6="18,599,333.3 ms">
+			Test StoreElementAction CompareAction!
+		</div>
+
+		<div style="width: 250px; height: 250px; border: 1px solid black; overflow: auto;" id="testScrollbar">
+			<input type="button" onclick="testCssSelector();" value="test">
+			<img src="1.jpg" style="height: 300px; width: 300px;" id="image1">
+		</div>
+
+		<frameset cols="50,*">
+			<frame id="myNavigation" src="navigation.html" />
+			<frame id="myDetail" name="frame" src="frame.html" />
+		</frameset>
+	</body>
+</html>

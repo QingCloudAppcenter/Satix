@@ -1,0 +1,14 @@
+<testCase>
+	<title>Open Web Page With Json Url</title>
+	<description>Open Web Page With Json Url</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${json:url_json->value}</value>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

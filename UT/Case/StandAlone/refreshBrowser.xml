@@ -1,0 +1,17 @@
+<testCase>
+	<title>Refresh Browser</title>
+	<description>Refresh Browser</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>refreshBrowser</name>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

@@ -1,0 +1,44 @@
+<testCase>
+	<title>Search APP</title>
+	<description>Search APP</description>
+	<stopIfFailed>true</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<!-- 等待页面加载 -->
+    <action>
+        <name>waitPageToLoad</name>
+       	<elapse>10000</elapse>
+    </action>
+
+<!-- 根据配置文件输入查询APP ID -->
+	<action>
+		<name>inputText</name>
+		<element>//*[@id="console"]/div[3]/div/div[3]/div/div[1]/div[2]/input
+		</element>
+		<elementBy>xpath</elementBy>
+		<value>${Appid}</value>
+	</action> 
+
+	<!-- 查询 -->
+	<action>
+		<name>enter</name>
+		<element>//*[@id="console"]/div[3]/div/div[3]/div/div[1]/div[2]/input
+		</element>
+		<elementBy>xpath</elementBy>
+	</action>
+	
+		<!-- 等待页面加载 -->
+    <action>
+        <name>waitPageToLoad</name>
+       	<elapse>10000</elapse>
+    </action>
+    
+    <!-- 验证有相关的app可以创建，否则验证不通过 -->
+	<action>
+		<name>assertBodyTextNotPresent</name>
+		<value>暂无相关应用</value> 
+	</action>
+ 
+ 
+	
+</testCase>

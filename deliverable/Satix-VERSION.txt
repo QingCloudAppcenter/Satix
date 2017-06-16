@@ -1,0 +1,2 @@
+satix.version=1.0.1
+satix.revision=201406031708

@@ -1,0 +1,44 @@
+<testCase>
+	<title>Match Pattern</title>
+	<description>Match Pattern</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myNavigation</value>
+	</action>
+	<action>
+		<name>click</name>
+		<element>myTree</element>
+		<elementBy>id</elementBy>
+	</action>
+	<action>
+		<name>click</name>
+		<!--element>regexp:branch[ 1]*</element-->
+		<element>branch 1</element>
+		<elementBy>linkText</elementBy>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>click</name>
+		<!--element>glob:click*</element-->
+		<element>click</element>
+		<elementBy>partialLinkText</elementBy>
+	</action>
+	<action>
+		<name>assertTitle</name>
+		<!--value>exact:satix home html</value-->
+		<value>satix home html</value>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

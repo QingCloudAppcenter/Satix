@@ -1,0 +1,23 @@
+<testCase>
+	<title>Include Test Case</title>
+	<description>Include Test Case</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>includeTestCase</name>
+		<path>openWebPage.xml</path>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>click</name>
+		<element>myBtn</element>
+		<elementBy>id</elementBy>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

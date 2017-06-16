@@ -1,0 +1,10 @@
+<testCase>
+	<title>Open Browser</title>
+	<description>Open Browser</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openBrowser</name>
+	</action>
+</testCase>

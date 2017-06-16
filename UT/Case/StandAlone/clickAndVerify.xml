@@ -1,0 +1,25 @@
+<testCase>
+	<title>Click And Verify</title>
+	<description>Click And Verify</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>clickAndVerify</name>
+		<element>click me to show content</element>
+		<elementBy>linkText</elementBy>
+		<verifyElement>myCheckbox</verifyElement>
+		<verifyElementBy>id</verifyElementBy>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

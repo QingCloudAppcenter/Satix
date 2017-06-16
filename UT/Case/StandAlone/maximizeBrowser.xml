@@ -1,0 +1,17 @@
+<testCase>
+	<title>Maximize Browser</title>
+	<description>Maximize Browser</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>maximizeBrowser</name>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

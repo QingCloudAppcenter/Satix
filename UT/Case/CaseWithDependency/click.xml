@@ -1,0 +1,23 @@
+<testCase>
+	<title>Click</title>
+	<description>Click an element</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>click</name>
+		<element>myBtnNotPresent</element>
+		<elementBy>id</elementBy>
+	</action>
+	<action>
+		<name>closeBrowser</name>
+	</action>
+</testCase>

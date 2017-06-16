@@ -1,0 +1,36 @@
+<testCase>
+	<title>Test QingCloud Login Function</title>
+	<description>Login QingCloud Client</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${URL}</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>user</element>
+		<elementBy>name</elementBy>
+		<value>${user}</value>
+	</action>
+	
+	<action>
+		<name>inputText</name>
+		<element>passwd</element>
+		<elementBy>name</elementBy>
+		<value>${passwd}</value>
+	</action>
+	
+     <action>
+		<name>click</name>
+		<element>input.btn-primary[type='submit']</element>
+		<elementBy>cssSelector</elementBy>
+	</action>
+	<action>
+      		<name>assertBodyText</name>
+    		<value>${VerifyUser}</value>
+		</action>  
+ 
+	
+</testCase>

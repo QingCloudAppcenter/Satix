@@ -1,0 +1,81 @@
+<testCase>
+	<title>Stop APP</title>
+	<description>Test Stop App Function</description>
+	<stopIfFailed>true</stopIfFailed>
+	<repeat>1</repeat> 
+	
+
+
+	<!-- 勾选第一行的checkbox -->
+	<action>
+		<name>click</name>
+		<element>//*[@id="console"]/div[3]/div/div[3]/div/table/tbody/tr[1]/td[1]/input</element>
+		<elementBy>xpath</elementBy>
+	</action>
+
+
+	<!-- 点击关闭按钮 -->
+	<action>
+		<name>click</name>
+		<element>//*[@id="console"]/div[3]/div/div[3]/div/div[1]/a[3]/span[2]
+		</element>
+		<elementBy>xpath</elementBy>
+	</action>
+	
+	<!-- 检查是否弹出确认关闭的对话框 -->
+	<action>
+      	<name>assertBodyText</name>
+        <value>确定要关闭集群</value>
+    </action>  
+	
+	<!-- 确认关闭 -->
+	<action>
+		<name>click</name>
+		<element>btn-ok</element>
+		<elementBy>className</elementBy>
+	</action>
+
+
+    <!-- 验证没有错误提示的对话框出现,太耗时间尽量少用这个action做验证 -->
+    <!-- 
+	<action>
+		<name>assertElementNotPresent</name>
+		<element>alert-error</element>
+		<elementBy>className</elementBy>
+	</action>
+	-->
+	<!-- 等待页面加载,because to stop App takes a little long time at the back end,so here wait for 60s.-->
+     <action>
+        <name>waitPageToLoad</name>
+       	<elapse>60000</elapse>
+    </action>
+    
+    <!-- 点击出现操作日志 -->
+  	<action>
+		<name>click</name>
+		<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]</element>
+		<elementBy>xpath</elementBy>
+	</action>
+  
+	<!-- check the log is to stop Resource -->
+	<action>
+      	<name>assertElementValue</name> 
+      	<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]/div/div/ol/li[1]/div/a</element>
+		<elementBy>xpath</elementBy>
+    	<value>关闭资源</value>
+	</action>  
+	
+	<!-- check the element class is successful-->  
+	<action>
+      	<name>assertElementAttribute</name> 
+      	<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]/div/div/ol/li[1]/span</element>
+		<elementBy>xpath</elementBy>
+    	<value>class="job-status successful"</value>
+	</action>   
+	<!-- 
+	<action>
+       	<name>closeBrowser</name>
+    </action>
+     -->
+	
+</testCase>

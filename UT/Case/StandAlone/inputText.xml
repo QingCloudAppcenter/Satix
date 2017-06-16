@@ -1,0 +1,37 @@
+<testCase>
+	<title>Input Text</title>
+	<description>Input Text</description>
+	<stopIfFailed>false</stopIfFailed>
+	<repeat>1</repeat>
+	
+	<action>
+		<name>openWebPage</name>
+		<value>${url}</value>
+	</action>
+	<action>
+		<name>switchFrame</name>
+		<value>myDetail</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>myInputText</element>
+		<elementBy>id</elementBy>
+		<value>hello satix user</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>myInputTextArea</element>
+		<elementBy>id</elementBy>
+		<value>This is a test with CR\nThis is the second line.</value>
+	</action>
+	<action>
+		<name>inputText</name>
+		<element>myInputTextArea</element>
+		<elementBy>id</elementBy>
+		<value>~!@#$%^*()twoblank  _+{}?[]</value>
+	</action>
+	<!--
+	<action>
+		<name>closeBrowser</name>
+	</action> -->
+</testCase>

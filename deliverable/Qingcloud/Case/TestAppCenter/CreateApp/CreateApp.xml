@@ -1,0 +1,96 @@
+<testCase>
+	<title>Create APP</title>
+	<description>Test Create App Function</description>
+	<stopIfFailed>true</stopIfFailed>
+	<repeat>1</repeat>  
+	 
+	
+	<!-- 跳转到新打开的页面 -->
+	<action>
+       	<name>switchToNewWindow</name>
+    </action>
+    
+    <!-- 等待页面加载 -->
+    <action>
+        <name>waitPageToLoad</name>
+       	<elapse>1000</elapse>
+    </action>
+    
+    <!-- 验证是否跳转到控制台页面 -->
+    <action>
+      	<name>assertElementValue</name> 
+      	<element>//*[@id="console"]/div[3]/div[1]/form/div[1]/section[1]/fieldset/div[2]/h4</element>
+		<elementBy>xpath</elementBy>
+    	<value>第1步: 基本设置</value>
+	</action>    
+   			
+    <!-- 勾选用户协议	 --> 
+	<action>
+		<name>click</name>
+	    <element>user_qingcloud_agreement</element>
+  		<elementBy>name</elementBy>
+	</action> 
+	
+	<!-- 点击提交按钮	 -->
+	<action>
+		<name>click</name>
+	    <element>btn-primary</element>
+ 		<elementBy>className</elementBy>
+	</action>
+	
+	
+	 <!-- 等待页面加载 -->
+    <action>
+        <name>waitPageToLoad</name>
+       	<elapse>1000</elapse>
+    </action>
+     
+     <!-- 重新点击左边的菜单刷新页面 -->
+     <action>
+		<name>click</name>
+		<element>AppCenter</element>
+		<elementBy>linkText</elementBy>
+	</action> 
+	
+	<action>
+		<name>click</name>
+		<element>云应用</element>
+		<elementBy>linkText</elementBy>
+	</action> 
+ 
+   <!-- 等待页面加载,because creating resource takes a little long time at the back end,so here wait for 60s.-->
+     <action>
+        <name>waitPageToLoad</name>
+       	<elapse>60000</elapse>
+    </action>
+    
+    <!-- 点击出现操作日志 -->
+  	<action>
+		<name>click</name>
+		<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]</element>
+		<elementBy>xpath</elementBy>
+	</action>
+  
+	<!-- check the log is the creating resource for creating App -->
+	<action>
+      	<name>assertElementValue</name> 
+      	<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]/div/div/ol/li[1]/div/a</element>
+		<elementBy>xpath</elementBy>
+    	<value>创建资源</value>
+	</action>  
+	
+	<!-- check the element class is successful for creating Status -->  
+	<action>
+      	<name>assertElementAttribute</name> 
+      	<element>//*[@id="console"]/div[1]/div/div[2]/ul/li[9]/div/div/ol/li[1]/span</element>
+		<elementBy>xpath</elementBy>
+    	<value>class="job-status successful"</value>
+	</action>  
+	
+	<!-- 
+	<action>
+       	<name>closeBrowser</name>
+    </action>
+     -->
+	
+</testCase>
