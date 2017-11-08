@@ -1,2 +1,0 @@
-SearchApp.xml 
-DeleteApp.xml <SearchApp.xml>

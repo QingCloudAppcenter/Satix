@@ -1,3 +1,0 @@
-Go2CreateApp.xml
-SearchApp.xml <Go2CreateApp.xml>
-CreateApp.xml <SearchApp.xml>

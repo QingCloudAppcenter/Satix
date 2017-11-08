@@ -1,2 +1,0 @@
-SearchApp.xml 
-StopApp.xml <SearchApp.xml>

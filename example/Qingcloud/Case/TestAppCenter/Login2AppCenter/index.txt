@@ -1,3 +1,0 @@
-Login.xml
-ChangeArea.xml
-GoAppCenter.xml
