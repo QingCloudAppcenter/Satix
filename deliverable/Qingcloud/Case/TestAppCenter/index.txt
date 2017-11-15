@@ -1,5 +1,0 @@
-Login2AppCenter
-#CreateApp
-StopApp
-#StartApp
-#DeleteApp
